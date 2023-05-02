@@ -1,23 +1,32 @@
+
+
 <mat-card>
     <mat-card-content>
-      <form #loginForm >
+      <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" >
         <h2>Log In</h2>
-        <mat-error *ngIf="false">
-          The username and password were not recognized
-        </mat-error>
         <mat-form-field>
-          <input matInput placeholder="Email"  name="username" required>
+          <input matInput placeholder="Email"  name="username" required
+          [(ngModel)]="email" >
           <mat-error>
             Please provide a valid email address
           </mat-error>
         </mat-form-field>
         <mat-form-field>
-          <input matInput type="password" placeholder="Password" name="password" required>
+          <input matInput type="password" placeholder="Password" name="password" required
+          [(ngModel)]="password">
           <mat-error>
             Please provide a valid password
           </mat-error>
         </mat-form-field>
         <button mat-raised-button color="primary" >Login</button>
+
+        <mat-checkbox name="rememberMe" [(ngModel)]="rememberMe">Remember Me</mat-checkbox>
+       <br>
       </form>
+
+      <div style="display: flex; justify-content: space-between; margin-top: 16px;">
+        <a href="#">Need help?</a>
+        <span>New to MovieTime?    <a routerLink="/signup">Sign up!</a></span>
+      </div>
     </mat-card-content>
   </mat-card>

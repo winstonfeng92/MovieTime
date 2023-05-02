@@ -16,10 +16,13 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 
 import {MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -44,6 +47,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     MatInputModule,
     MatIconModule,
     InfiniteScrollModule,
+    FormsModule,
+    MatCheckboxModule,
 
     
   ],

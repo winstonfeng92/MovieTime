@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'movies', loadChildren: () => import('./movies/movies.module').then(m => m.MoviesModule) },
+  { path: 'signup', loadChildren: () => import('./sign-up/sign-up.module').then(m => m.SignUpModule) },
 
 ];
 

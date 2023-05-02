@@ -1,5 +1,5 @@
 mat-card {
-    width: 400px;
+    width: 250px;
     margin: 20px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
@@ -8,11 +8,15 @@ mat-card {
   mat-card-header {
     background-color: #333;
     color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px;
   }
   
   mat-card-title {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
+    height: 60px;
   }
   
   img {
@@ -24,14 +28,27 @@ mat-card {
   }
   
   mat-card-content {
-    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    height: 60px; /* adjust the height as needed */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 15px;
 
+    font-size: small;
+
+    p {
+      margin: 0px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
   
   mat-card-actions {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px;
+    padding: 10px;
     background-color: #eee;
+    height: 30px;
   }
