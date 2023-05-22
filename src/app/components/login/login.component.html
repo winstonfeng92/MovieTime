@@ -2,25 +2,26 @@
 
 <mat-card>
     <mat-card-content>
-      <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" >
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
         <h2>Log In</h2>
+        <div *ngIf="loginFailed" class="fail-msg" >Invalid username or password</div>
         <mat-form-field>
-          <input matInput placeholder="Email"  name="username" required
-          [(ngModel)]="email" >
+          <input matInput placeholder="Email"  name="username"
+          formControlName="email" >
           <mat-error>
             Please provide a valid email address
           </mat-error>
         </mat-form-field>
         <mat-form-field>
-          <input matInput type="password" placeholder="Password" name="password" required
-          [(ngModel)]="password">
+          <input matInput type="password" placeholder="Password" name="password"
+          formControlName="password">
           <mat-error>
             Please provide a valid password
           </mat-error>
         </mat-form-field>
-        <button mat-raised-button color="primary" >Login</button>
+        <button type="submit" [disabled]="!loginForm.valid" mat-raised-button color="primary" >Login</button>
 
-        <mat-checkbox name="rememberMe" [(ngModel)]="rememberMe">Remember Me</mat-checkbox>
+        <mat-checkbox name="rememberMe" >Remember Me</mat-checkbox>
        <br>
       </form>
 

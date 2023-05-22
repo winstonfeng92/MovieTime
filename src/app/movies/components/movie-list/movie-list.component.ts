@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Movie } from 'src/app/models/movie';
+import { MovieCacheService } from 'src/app/services/movie-cache.service';
 import { MovieService } from 'src/app/services/movie.service';
+
 
 @Component({
   selector: 'app-movie-list',
@@ -9,13 +11,26 @@ import { MovieService } from 'src/app/services/movie.service';
 })
 export class MovieListComponent {
 
-  page: number = 1;
-  constructor(private movieService:MovieService) {
+  constructor(
+    private movieService:MovieService,
+    private movieCacheService: MovieCacheService
+    ) {
   }
   public movieList: Array<Movie> = [];
+  page: number = 1;
+
 
   ngOnInit(): void {
-    this.loadMovies();
+        // Try to load movies from the cache first
+        this.movieList = this.movieCacheService.getMovies();
+        this.page = this.movieCacheService.getCurrentPage();
+
+
+        // If cache is empty, fetch movies from the API
+        if (this.movieList.length === 0) {
+          this.loadMovies();
+        }
+    
   }
 
   loadMovies(): void {
@@ -24,6 +39,7 @@ export class MovieListComponent {
       console.log(this.page)
       this.movieList = [...this.movieList, ...movies];
       this.page++;
+      this.movieCacheService.setMovies(this.movieList, this.page);
     });
   }
 
@@ -33,7 +49,9 @@ export class MovieListComponent {
 
 }
 
-//For Async Pipe, I could use this...
+//For Async Pipe, I could use this...but it wouldn't 
+//do a great job with inifinite scroll
+
 // page: number = 1;
 // movies$: Observable<Movie[]>;
 

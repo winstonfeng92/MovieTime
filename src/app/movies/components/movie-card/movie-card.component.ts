@@ -23,7 +23,9 @@ export class MovieCardComponent {
     original_language: "en",
     video: false,
     vote_average: 8.433,
-    vote_count: 26290
+    vote_count: 26290,
+    homepage: 'x',
+    backdrop_path: '',
   };
 
 }

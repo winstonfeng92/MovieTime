@@ -1,1 +1,6 @@
-<p>plan-page works!</p>
+<div [formGroup]="parentFormGroup">
+    <mat-form-field appearance="fill">
+      <mat-label>Plan Type</mat-label>
+      <input matInput formControlName="plan">
+    </mat-form-field>
+  </div>

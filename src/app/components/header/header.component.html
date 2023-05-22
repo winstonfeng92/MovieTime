@@ -4,7 +4,14 @@
     <span>Movie Time</span>
   </a>    
   <button mat-button routerLink="/movies">View Movies</button>
-  <button mat-button routerLink="/login">Sign In</button>
+  <div class="right-container">
+  <button mat-button routerLink="/login" *ngIf="!username">Sign In</button>
+
+  <button mat-button *ngIf="username" [matMenuTriggerFor]="menu">{{username}}</button>
+  <mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="logout()">Logout</button>
+  </mat-menu>
+  </div>
   </mat-toolbar>
 
 

@@ -1,1 +1,19 @@
-<p>sign-up works!</p>
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+<div *ngIf="step === 1">
+    <app-username-pw [parentFormGroup]="registrationForm" ></app-username-pw>
+    <button mat-button (click)="nextStep()">Next</button>
+
+  </div>
+  <div *ngIf="step === 2">
+    <app-key-page [parentFormGroup]="registrationForm" ></app-key-page>
+    <button mat-button (click)="nextStep()">Next</button>
+
+  </div>
+  <div *ngIf="step === 3">
+    <app-plan-page [parentFormGroup]="registrationForm" ></app-plan-page>
+    <button type="submit" mat-button>Submit</button>
+
+  </div>
+
+</form>

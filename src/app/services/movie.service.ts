@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Movie } from '../models/movie';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
-
+import { Cast } from '../models/cast';
 
 
 @Injectable({
@@ -14,6 +14,7 @@ export class MovieService {
   private apiKey = 'e9753e47d9644fdd3d4d353165a6cf41';
 
   constructor(private http: HttpClient) { }
+
 
   getMovies(page?: number): Observable<Movie[]> {
     let params = new HttpParams();
@@ -33,5 +34,21 @@ export class MovieService {
     console.log(url);
     return this.http.get<{ results: Movie[] }>(url, {params: params}).pipe(
       map((response) => response.results)
-    );  }
+    );  
+  }
+
+  getMovieDetails(movieId: number): Observable<Movie> {
+    const url = `${this.endpoint}/movie/${movieId}?api_key=${this.apiKey}`;
+  
+    return this.http.get<Movie>(url);
+  }
+
+  getCredits(movieId: number): Observable<Cast[]> {
+    const url = `${this.endpoint}/movie/${movieId}/credits?api_key=${this.apiKey}`;
+    return this.http.get<{ cast: Cast[] }>(url).pipe(
+      map((response) => response.cast)
+    );
+  }
+
+
 }

@@ -17,12 +17,16 @@ import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 import {MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; //is this used?
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 
 
@@ -48,7 +52,10 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     InfiniteScrollModule,
     FormsModule,
+    ReactiveFormsModule,
     MatCheckboxModule,
+    MatMenuModule,
+
 
     
   ],

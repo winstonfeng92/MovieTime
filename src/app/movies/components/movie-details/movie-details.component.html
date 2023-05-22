@@ -1,0 +1,28 @@
+<div class="head-container" *ngIf="movie" >
+    <div class="background-image" [style.background-image]="'url(https://image.tmdb.org/t/p/original/' + movie.backdrop_path + ')'"></div>
+
+    <mat-card class='movie-details-card'>
+
+    <img mat-card-image [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" alt="Movie Poster">
+
+  </mat-card>
+  <div class="title-details-container">
+    <h1>{{movie.title }}</h1>
+    <p>{{ movie.overview }}</p>
+    <a [href]="movie.homepage">Movie Homepage</a>
+
+  </div>
+</div>
+
+<div class="actors-container">
+    <h2>Top Billed Cast</h2>
+    <div class="cast-container">
+        <mat-card *ngFor="let castMember of castList" class="actor-card">
+            <img mat-card-image [src]="'https://image.tmdb.org/t/p/w200' + castMember.profile_path">
+            <mat-card-content>
+            <h4>{{ castMember.name }}</h4>
+            <p>{{ castMember.character }}</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

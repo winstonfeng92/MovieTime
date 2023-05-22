@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-plan-page',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./plan-page.component.scss']
 })
 export class PlanPageComponent {
+  @Input() parentFormGroup!: FormGroup;
 
 }

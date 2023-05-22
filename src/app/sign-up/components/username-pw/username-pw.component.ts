@@ -9,7 +9,7 @@ FormGroup
 })
 export class UsernamePwComponent {
 
-  @Input() parentFormGroup?: FormGroup;
+  @Input() parentFormGroup!: FormGroup;
 
   constructor() { }
 
