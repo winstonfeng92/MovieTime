@@ -30,17 +30,29 @@
 
 
 .movie-details-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     max-width: 300px;
     margin: 40px;
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: auto;
 
-  }
+    img.mat-card-image {
+      max-width: 100%; // Change to 100% to allow the image to adjust its width
+      height: auto; // Allow the height to adjust proportionally
+    }
+
+    }
+
+
   
-  .movie-poster {
-    max-width: 100px;
-    height: 50%;
-  }
+//   .movie-poster {
+//     max-width: 100px;
+//     height: 50%;
+//   }
   
   mat-card-content {
     margin-top: 16px;
@@ -87,5 +99,20 @@
     }
     p {
         margin: 0px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .head-container {
+      flex-direction: column; // Change to column layout on small screens
+      align-items: center; // Center-align the content
+  
+      .movie-details-card {
+        margin: 20px; // Reduce the margin for smaller spacing
+      }
+  
+      .title-details-container {
+        padding: 20px; // Reduce the padding for smaller spacing
+      }
     }
 }

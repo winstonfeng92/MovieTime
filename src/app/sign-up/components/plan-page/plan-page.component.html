@@ -1,6 +1,15 @@
-<div [formGroup]="parentFormGroup">
+
+
+<mat-card class="plan-card">
+    <mat-card-header>
+      <mat-card-title>Choose a plan</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+<div [formGroup]="parentFormGroup" class="plan-form">
     <mat-form-field appearance="fill">
       <mat-label>Plan Type</mat-label>
       <input matInput formControlName="plan">
     </mat-form-field>
   </div>
+</mat-card-content>
+</mat-card>

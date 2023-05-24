@@ -25,6 +25,11 @@ export class SignUpComponent {
     this.step++;
   }
 
+  previous() {
+    console.log('proceed')
+    this.step--;
+  }
+
   onSubmit() {
     console.log('submit')
     // call service to send registration data to backend
