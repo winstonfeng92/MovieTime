@@ -4,8 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
-// import { MovieCardComponent } from './components/movie-card/movie-card.component';
-// import { MovieListComponent } from './components/movie-list/movie-list.component';
+
 import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
 
@@ -22,13 +21,8 @@ import {MatMenuModule} from '@angular/material/menu';
 
 import {MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-import { FormsModule } from '@angular/forms'; //is this used?
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-
-
-import { JwtHelperService } from '@auth0/angular-jwt';
 
 
 
@@ -38,8 +32,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
     HeaderComponent,
     LoginComponent,
     HomepageComponent,
-    // MovieCardComponent,
-    // MovieListComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -52,8 +45,6 @@ import { JwtHelperService } from '@auth0/angular-jwt';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    InfiniteScrollModule,
-    FormsModule,
     ReactiveFormsModule,
     MatCheckboxModule,
     MatMenuModule,
