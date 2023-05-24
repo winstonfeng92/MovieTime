@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Movie } from 'src/app/models/movie';
+import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 
 
 @Component({
@@ -10,6 +11,7 @@ import { Movie } from 'src/app/models/movie';
 export class MovieCardComponent {
   
   @Input() movie?: Movie;
+
 
 
   fightClubMovie: Movie = {

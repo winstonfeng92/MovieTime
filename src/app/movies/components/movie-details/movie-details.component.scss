@@ -20,6 +20,10 @@
         filter: brightness(0.3); /* Adjust the value between 0 and 1 */
         z-index: -1;
       }
+    
+    .button-container {
+        margin-top: 20px;
+    }
 
 }
 

@@ -19,7 +19,10 @@
             Please provide a valid password
           </mat-error>
         </mat-form-field>
-        <button type="submit" [disabled]="!loginForm.valid" mat-raised-button color="primary" >Login</button>
+        <button type="submit" [disabled]="!loginForm.valid" mat-raised-button color="primary" >
+          <mat-spinner *ngIf="isLoading" strokeWidth='5' color="accent" diameter="20"></mat-spinner>
+          <span *ngIf="!isLoading">Login</span>
+        </button>
 
         <mat-checkbox name="rememberMe" >Remember Me</mat-checkbox>
        <br>

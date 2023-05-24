@@ -14,7 +14,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class LoginComponent {
   
-
+  isLoading = false;
   
   // email: string ='';
   // password: string = '';
@@ -34,6 +34,7 @@ export class LoginComponent {
     this.submitted = true;
     console.log('attempt');
     console.log(this.loginForm.value);
+    this.isLoading = true;
   
     if (this.loginForm.valid) {
       this.login();
@@ -67,18 +68,21 @@ export class LoginComponent {
           const username = decodedToken.username; // Replace with the actual username
           this.userService.setUser(username);
           localStorage.setItem('username', username);
+          this.isLoading = false;
           this.router.navigate(['/movies']);
         },
         error: (error) => {
           // Handle login error here
           console.error('Login failed');
           console.error(error);
+          this.isLoading = false;
           this.loginFailed = true; // Set loginFailed to true when login fails
 
         }
       });
     } else {
       console.error('Invalid email or password');
+      this.isLoading = false;
     }
   }
 

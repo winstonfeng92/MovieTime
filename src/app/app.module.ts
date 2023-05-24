@@ -25,6 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { FormsModule } from '@angular/forms'; //is this used?
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 import { JwtHelperService } from '@auth0/angular-jwt';
 
@@ -55,6 +57,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
     ReactiveFormsModule,
     MatCheckboxModule,
     MatMenuModule,
+    MatProgressSpinnerModule,
 
 
     

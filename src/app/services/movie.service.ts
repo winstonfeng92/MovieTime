@@ -22,6 +22,9 @@ export class MovieService {
     if (page) {
     params = params.set('page', page);
     }
+    params.set('include_adult', false);
+    params.set('sort_by', 'popularity.desc');
+
     // const params = {
     //   api_key: this.apiKey,
     //   language: 'en-US',
@@ -39,7 +42,6 @@ export class MovieService {
 
   getMovieDetails(movieId: number): Observable<Movie> {
     const url = `${this.endpoint}/movie/${movieId}?api_key=${this.apiKey}`;
-  
     return this.http.get<Movie>(url);
   }
 
@@ -47,6 +49,13 @@ export class MovieService {
     const url = `${this.endpoint}/movie/${movieId}/credits?api_key=${this.apiKey}`;
     return this.http.get<{ cast: Cast[] }>(url).pipe(
       map((response) => response.cast)
+    );
+  }
+
+  getVideos(movieId: number): Observable<any[]> {
+    const url = `${this.endpoint}/movie/${movieId}/videos?api_key=${this.apiKey}`;
+    return this.http.get<{ results: any[] }>(url).pipe(
+      map((response) => response.results)
     );
   }
 

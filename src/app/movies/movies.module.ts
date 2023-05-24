@@ -13,6 +13,11 @@ import { MatInputModule } from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { YouTubePlayerModule } from '@angular/youtube-player';
+import { TrailerDialogComponent } from './components/trailer-dialog/trailer-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +25,7 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
     MovieListComponent,
     MovieCardComponent,
     MovieDetailsComponent,
+    TrailerDialogComponent,
   ],
   imports: [
     CommonModule,
@@ -30,6 +36,9 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
     MatInputModule,
     MatIconModule,
     InfiniteScrollModule,
+    YouTubePlayerModule,
+    MatDialogModule,
+    MatProgressSpinnerModule,
   ]
 })
 export class MoviesModule { }

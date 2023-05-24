@@ -1,0 +1,12 @@
+
+<div class="outer-box">
+    <div class="vid-container">
+        <button mat-icon-button (click)="previousVideo()" [disabled]="currentVideoIndex === 0" class="left-btn">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+        <youtube-player [videoId]="videoId"></youtube-player>
+        <button mat-icon-button (click)="nextVideo()" [disabled]="currentVideoIndex === videos.length - 1" class="right-btn">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+    </div>
+</div>

@@ -10,9 +10,16 @@
     <h1>{{movie.title }}</h1>
     <p>{{ movie.overview }}</p>
     <a [href]="movie.homepage">Movie Homepage</a>
+    <div class="button-container">
+        <button mat-raised-button color="primary" (click)="openVideoPlayerDialog(0)">Play Trailer</button>
+    </div>
+
 
   </div>
+
 </div>
+
+
 
 <div class="actors-container">
     <h2>Top Billed Cast</h2>
@@ -26,3 +33,4 @@
         </mat-card>
     </div>
 </div>
+
