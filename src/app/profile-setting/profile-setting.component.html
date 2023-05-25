@@ -1,0 +1,22 @@
+
+<h1>Configure Settings</h1>
+<h2>Access Level is: {{access}}</h2>
+
+<mat-card class="plan-card">
+  <mat-card-header>
+    <mat-card-title>Change Plan Type</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div [formGroup]="planForm" class="plan-form">
+      <mat-form-field appearance="fill">
+        <mat-label>Plan Type</mat-label>
+        <mat-select placeholder="Select Plan Type" formControlName="planType">
+          <mat-option value="USER">User</mat-option>
+          <mat-option value="SUPERUSER">Superuser</mat-option>
+          <mat-option value="ADMIN">Admin</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <button mat-raised-button color="primary" (click)="onSubmit()">Save</button>
+  </mat-card-content>
+</mat-card>

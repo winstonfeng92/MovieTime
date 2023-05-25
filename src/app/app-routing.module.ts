@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'movies', loadChildren: () => import('./movies/movies.module').then(m => m.MoviesModule) },
   { path: 'signup', loadChildren: () => import('./sign-up/sign-up.module').then(m => m.SignUpModule) },
+  { path: 'settings', loadChildren: () => import('./profile-setting/profile-setting.module').then(m => m.ProfileSettingModule) },
 
 ];
 

@@ -25,3 +25,13 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+curl -X PATCH \
+  'https://nest-movie-backend.onrender.com/auth/userupdate' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjcyNDBiOWRjNDZhZGZhOWMzYTEwNCIsInVzZXJuYW1lIjoid2luc3RvbiIsImVtYWlsIjoid2luc3RvbkBnbWFpbC5jb20iLCJ0bWRiX2tleSI6InF3ZXJ0YXNkZmhqa2x6eGN2IiwiaWF0IjoxNjg0OTc1ODQwLCJleHAiOjE2ODQ5Nzc2NDB9.gYs31NJTeBcmBoz6EK55pwrQBWWumtppknBaQMlMzGE' \
+  -d '{
+    "email": "winston@gmail.com",
+    "role": "USER"
+  }'
