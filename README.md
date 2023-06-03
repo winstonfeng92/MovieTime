@@ -30,8 +30,10 @@ curl -X PATCH \
   'https://nest-movie-backend.onrender.com/auth/userupdate' \
   -H 'accept: */*' \
   -H 'Content-Type: application/json' \
-  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjcyNDBiOWRjNDZhZGZhOWMzYTEwNCIsInVzZXJuYW1lIjoid2luc3RvbiIsImVtYWlsIjoid2luc3RvbkBnbWFpbC5jb20iLCJ0bWRiX2tleSI6InF3ZXJ0YXNkZmhqa2x6eGN2IiwiaWF0IjoxNjg0OTc1ODQwLCJleHAiOjE2ODQ5Nzc2NDB9.gYs31NJTeBcmBoz6EK55pwrQBWWumtppknBaQMlMzGE' \
+  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjcyNDBiOWRjNDZhZGZhOWMzYTEwNCIsInVzZXJuYW1lIjoid2luc3RvbiIsImVtYWlsIjoid2luc3RvbkBnbWFpbC5jb20iLCJ0bWRiX2tleSI6InF3ZXJ0YXNkZmhqa2x6eGN2IiwiaWF0IjoxNjg1ODA2MTEwLCJleHAiOjE2ODU4MDc5MTB9.M6K2jrgdN0G9MYqb-iuyLLhlXh5SPWqbsANtexnzfuc' \
   -d '{
     "email": "winston@gmail.com",
-    "role": "USER"
+    "role": "ADMIN"
   }'
+
+{"accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjcyNDBiOWRjNDZhZGZhOWMzYTEwNCIsInVzZXJuYW1lIjoid2luc3RvbiIsImVtYWlsIjoid2luc3RvbkBnbWFpbC5jb20iLCJ0bWRiX2tleSI6InF3ZXJ0YXNkZmhqa2x6eGN2IiwiaWF0IjoxNjg1ODA2MTQ3LCJleHAiOjE2ODU4MDc5NDd9.oRjq6Ex3154ItZ2LAy-shE5OvJvLNDznFyxvoKLnRus","role":"ADMIN"}

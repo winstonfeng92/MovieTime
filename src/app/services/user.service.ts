@@ -22,6 +22,12 @@ export class UserService {
     this.accessSubject.next(access);
   }
 
+  isPrivilegedUser(): boolean {
+    let privilege = this.accessSubject.getValue()
+    console.log('priv check '+privilege)
+    return privilege === 'ADMIN' || privilege === 'SUPERUSER';
+  }
+
   logout() {
     this.userSubject.next('');
     this.accessSubject.next('');

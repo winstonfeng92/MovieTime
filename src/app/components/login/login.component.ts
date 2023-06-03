@@ -64,12 +64,13 @@ export class LoginComponent {
           // Redirect to the movie page or perform other actions
 
           const accessToken = response.accessToken;
-
+          //Token is decoded here
           const jwtHelper = new JwtHelperService();
           const decodedToken = jwtHelper.decodeToken(accessToken);
           localStorage.setItem('decodedToken',decodedToken)
           console.log('decoded: '+JSON.stringify(decodedToken));
           const username = decodedToken.username;
+          //Storage Service call userService
           this.userService.setAccess(response.role);
           this.userService.setUser(username);
           localStorage.setItem('username', username);
