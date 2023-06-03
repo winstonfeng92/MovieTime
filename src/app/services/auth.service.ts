@@ -21,4 +21,16 @@ export class AuthService {
     const accessToken = localStorage.getItem('accessToken');
     return !!accessToken; // Return true if access token exists, false otherwise
   }
+
+  changeUserType(role: string) {
+    const payload = { role };
+    const accessToken = localStorage.getItem('accessToken');
+    const headers = {
+      'accept': '*/*',
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${accessToken}`
+    };
+  
+    return this.http.patch('https://nest-movie-backend.onrender.com/auth/userupdate', payload, { headers });
+  }
 }
