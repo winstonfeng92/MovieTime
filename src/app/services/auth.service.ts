@@ -17,6 +17,12 @@ export class AuthService {
 
   }
 
+  checkEmail(email: string) {
+    console.log('checking email')
+    const payload = {email};
+    return this.http.post('https://nest-movie-backend.onrender.com/auth/check-email', payload);
+  }
+
   isLoggedIn(): boolean {
     const accessToken = localStorage.getItem('accessToken');
     return !!accessToken; // Return true if access token exists, false otherwise

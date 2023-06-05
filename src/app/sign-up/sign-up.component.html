@@ -1,26 +1,31 @@
-<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+<form (ngSubmit)="onSubmit()">
 
-    <div *ngIf="step === 1" class="step-container">
-        <app-username-pw [parentFormGroup]="registrationForm"></app-username-pw>
-        <div class="button-container">
-          <button mat-button (click)="nextStep()">Next</button>
-        </div>
-      </div>
-      
-      <div *ngIf="step === 2" class="step-container">
-        <app-key-page [parentFormGroup]="registrationForm"></app-key-page>
-        <div class="button-container">
-          <button mat-button (click)="previous()">Back</button>
-          <button mat-button (click)="nextStep()">Next</button>
-        </div>
-      </div>
-      
-      <div *ngIf="step === 3" class="step-container">
-        <app-plan-page [parentFormGroup]="registrationForm"></app-plan-page>
-        <div class="button-container">
-          <button mat-button (click)="previous()">Back</button>
-          <button type="submit" color="primary" mat-raised-button>Submit</button>
-        </div>
-      </div>
+  <div *ngIf="step === 1" class="step-container">
+
+    <app-username-pw [parentFormGroup]="usernameFormGroup"></app-username-pw>
+    <div *ngIf="usernameFormGroup.get('username')?.errors?.['emailExists']" class="error-message">
+      Email already exists. Please choose a different one.
+    </div>
+    <div class="button-container">
+      <button mat-button [disabled]="!usernameFormGroup.valid" (click)="nextStep()">Next</button>
+    </div>
+
+  </div>
+
+  <div *ngIf="step === 2" class="step-container">
+    <app-key-page [parentFormGroup]="keyFormGroup"></app-key-page>
+    <div class="button-container">
+      <button mat-button (click)="previous()">Back</button>
+      <button mat-button [disabled]="!keyFormGroup.valid" (click)="nextStep()">Next</button>
+    </div>
+  </div>
+
+  <div *ngIf="step === 3" class="step-container">
+    <app-plan-page [parentFormGroup]="planFormGroup"></app-plan-page>
+    <div class="button-container">
+      <button mat-button (click)="previous()">Back</button>
+      <button type="submit" color="primary" mat-raised-button [disabled]="!planFormGroup.valid">Submit</button>
+    </div>
+  </div>
 
 </form>

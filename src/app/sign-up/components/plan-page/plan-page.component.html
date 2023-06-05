@@ -8,7 +8,11 @@
 <div [formGroup]="parentFormGroup" class="plan-form">
     <mat-form-field appearance="fill">
       <mat-label>Plan Type</mat-label>
-      <input matInput formControlName="plan">
+      <mat-select formControlName="plan">
+        <mat-option value="USER">USER</mat-option>
+        <mat-option value="SUPERUSER">SUPERUSER</mat-option>
+        <mat-option value="ADMIN">ADMIN</mat-option>
+      </mat-select>
     </mat-form-field>
   </div>
 </mat-card-content>
